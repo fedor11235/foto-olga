@@ -2,8 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* height: 4vh; */
-  /* width: 100%; */
   padding: 18px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
@@ -12,4 +10,18 @@
   font-weight: 700;
   color: white;
   text-transform: uppercase;
+}
+.wrapper {
+  display: flex;
+  gap: 16px;
+}
+.section {
+  font-size: 12px;
+  letter-spacing: 2.25px;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+}
+.section:hover {
+  color: rgb(179, 154, 107);
 }

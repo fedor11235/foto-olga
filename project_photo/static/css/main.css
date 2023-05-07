@@ -1,17 +1,3 @@
-.wrapper {
-  display: flex;
-  gap: 16px;
-}
-.section {
-  font-size: 12px;
-  letter-spacing: 2.25px;
-  text-transform: uppercase;
-  color: white;
-  cursor: pointer;
-}
-.section:hover {
-  color: rgb(179, 154, 107);
-}
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -66,8 +52,10 @@
   background-position: center;
   cursor: pointer;
   background-image: url('../img/icons/close.png');
+  z-index: 3;
 }
 .photo-origin {
   width: 80vw;
+  z-index: 3;
 }
 

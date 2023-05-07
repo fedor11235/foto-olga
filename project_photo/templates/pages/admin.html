@@ -9,6 +9,28 @@
 {% endblock %}
 
 {% block content %}
-  <div class="admin">
-  </div>
+  {% if current_user.is_authenticated %}
+    <div class="admin">
+      <form class="admin" method="post" action="/login">
+        <label for="instagram">instagram</label>
+        <input required name="instagram" id="instagram" type="text" placeholder="instagram">
+        <label for="nick">nick</label>
+        <input required name="nick" id="nick" type="password" placeholder="nick">
+        <button class="button">сохранить</button>
+      </form>
+      <button class="button">загрузить фото</button>
+      <a class="linck button button-linck" href="{{ url_for('auth.logout') }}" class="logout">выйти</a>
+    </div>
+  {% else %}
+    <form class="admin" method="post" action="/login">
+      <input required name="login" type="text" placeholder="login">
+      <input required name="password" type="password" placeholder="password">
+      <button class="button">log in</button>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="is-danger">{{ messages[0] }}</div>
+      {% endif %}
+      {% endwith %}
+    </form>
+  {% endif %}
 {% endblock %}

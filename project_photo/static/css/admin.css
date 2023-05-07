@@ -1,5 +1,46 @@
-body {
-  font-family: Verdana, Helvetica, Arial, sans-serif;
-  overflow-x: hidden;
-  user-select: none;
+.admin {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 50vw;
+  margin: auto;
+  margin-top: 10%;
 }
+input {
+  border: 0;
+  outline: 0;
+  border-radius: 6px;
+  height: 41px;
+  padding: 0 8px;
+}
+.is-danger {
+  height: 41px;
+  line-height: 41px;
+  color: rgb(179, 154, 107);;
+}
+.button {
+  height: 41px;
+  border: 0;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: scale .3s;
+  font-size: 16px;
+}
+.button:hover {
+  background-color: rgb(179, 154, 107);
+}
+.button:active {
+  scale: .9;
+}
+.button-linck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+label {
+  color: rgb(179, 154, 107);
+  font-size: 14px;
+}
+

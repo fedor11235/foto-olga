@@ -10,7 +10,7 @@ load_dotenv()
 app     = Flask(__name__)
 
 app.debug                             = os.getenv('DEBUG')
-# app.config['SECRET_KEY']              = os.getenv('SECRET_KEY')
+app.config['SECRET_KEY']              = os.getenv('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
 app.config['SQLALCHEMY_ECHO']         = os.getenv('SQLALCHEMY_ECHO')
 
@@ -32,6 +32,9 @@ def create_app():
   @login_manager.user_loader
   def load_user(login):
     return User.query.get(login)
+  
+  from .auth import auth as auth_blueprint
+  app.register_blueprint(auth_blueprint)
 
   from .main import main as main_blueprint
   app.register_blueprint(main_blueprint)
