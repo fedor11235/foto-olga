@@ -6,6 +6,9 @@
   margin: auto;
   margin-top: 10%;
 }
+#fileInput {
+  display: none;
+}
 input {
   border: 0;
   outline: 0;
