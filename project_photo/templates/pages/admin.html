@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/admin.css') }}">
+{% endblock %}
+
+{% block js %}
+  <script src="{{ url_for('static', filename= 'script/admin.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="admin">
+  </div>
+{% endblock %}
