@@ -1,7 +1,24 @@
-document.addEventListener("DOMContentLoaded", handlerDOMContentLoaded)
+let photoPopup
+
+document.addEventListener('DOMContentLoaded', handlerDOMContentLoaded)
 
 function handlerDOMContentLoaded() {
-  console.log('page loaded successfully')
+  const photos = document.getElementsByClassName('photo')
+  const close = document.getElementById('close')
+  for(const photo of photos){ 
+    photo.addEventListener('click', handlerClickOnPhoto)
+  }
+  close.addEventListener('click', handlerClickOnClose)
+}
+
+function handlerClickOnPhoto(elem) {
+  console.log(elem.target.style.backgroundImage)
+  photoPopup = document.getElementById('photo-popup')
+  photoPopup.style.display='flex'
+}
+
+function handlerClickOnClose() {
+  photoPopup.style.display='none'
 }
 
 function sendingRequestToServer(method, url) {

@@ -9,18 +9,11 @@
 {% endblock %}
 
 {% block content %}
-<div class="header">
-  <div class="logo">logo</div>
-  <div class="wrapper">
-    <a class="section linck" href="{{ url_for('main.index') }}">home</a>
-    <a
-      class="section linck"
-      href="https://www.instagram.com/cxgoehs/"
-      target="_blank"
-    >instagram</a>
-    <a class="section linck" href="{{ url_for('main.contacts') }}">contacts</a>
+  <div id="photo-popup">
+    <div class="bg"></div>
+    <div id="close"></div>
+    <img class="photo-origin" src="static/img/test_photo.jpg" alt="photo">
   </div>
-</div>
   <div class="main">
     <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
     <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
@@ -31,11 +24,5 @@
     <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
     <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
     <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
-  </div>
-  <div class="footer">
-    <div class="icon share"></div>
-    <div class="icon instagram"></div>
-    <div class="icon like"></div>
-    <div class="icon enroll"></div>
   </div>
 {% endblock %}

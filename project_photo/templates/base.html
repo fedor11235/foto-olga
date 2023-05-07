@@ -4,11 +4,31 @@
       <meta charset="UTF-8">
       <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename= 'img/test_favicon.png') }}">
       <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'css/header.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'css/footer.css') }}">
       {% block css %} {% endblock %}
       {% block js %} {% endblock %}
       <title>Фотограф Ольга</title>
   </head>
   <body>
+    <div class="header">
+      <div class="logo">logo</div>
+      <div class="wrapper">
+        <a class="section linck" href="{{ url_for('main.index') }}">home</a>
+        <a
+          class="section linck"
+          href="https://www.instagram.com/cxgoehs/"
+          target="_blank"
+        >instagram</a>
+        <a class="section linck" href="{{ url_for('main.contacts') }}">contacts</a>
+      </div>
+    </div>
     {% block content %} {% endblock %}
+    <div id="footer">
+      <div class="icon share"></div>
+      <div class="icon instagram"></div>
+      <div class="icon enroll"></div>
+      <div class="icon like"></div>
+    </div>
   </body>
 </html>

@@ -5,33 +5,23 @@
   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/contacts.css') }}">
 {% endblock %}
 
+{% block js %}
+  <script src="{{ url_for('static', filename= 'script/index.js') }}"></script>
+{% endblock %}
+
 {% block content %}
-  <div class="header">
-    <div class="logo">logo</div>
-    <div class="wrapper">
-      <a class="section linck" href="{{ url_for('main.index') }}">home</a>
+  <div class="contacts">
+    <div class="avatar" style="background-image: url('static/img/test_avatar.jpg')"></div>
+    <div class="contacts-title">PHOTOGRAPHER MARCO LESSI</br>BASED IN MILAN (Italy)</div>
+    <div class="contacts-title">CONTACT</div>
+    <div class="info">info@marcolessi.com</div>
+    <div class="contacts-title">FOLLOW ME ON</div>
+    <div>
       <a
-        class="section linck"
+        class="linck info"
         href="https://www.instagram.com/cxgoehs/"
         target="_blank"
       >instagram</a>
-      <a class="section linck" href="{{ url_for('main.contacts') }}">contacts</a>
-    </div>
-  </div>
-  <div class="contacts-wrapper">
-    <div class="contacts">
-      <div class="avatar" style="background-image: url('static/img/test_avatar.jpg')"></div>
-      <div class="contacts-title">PHOTOGRAPHER MARCO LESSI</br>BASED IN MILAN (Italy)</div>
-      <div class="contacts-title">CONTACT</div>
-      <div class="info">info@marcolessi.com</div>
-      <div class="contacts-title">FOLLOW ME ON</div>
-      <div>
-        <a
-          class="linck info"
-          href="https://www.instagram.com/cxgoehs/"
-          target="_blank"
-        >instagram</a>
-      </div>
     </div>
   </div>
 {% endblock %}

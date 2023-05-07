@@ -1,0 +1,31 @@
+#footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  opacity: .4;
+  gap: 12px;
+  padding-left: 18px;
+  padding-bottom: 18px;
+  height: 20px;
+  z-index: 4;
+}
+.icon {
+  height: 19px;
+  width: 19px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+.share {
+  background-image: url('../img/icons/share.png');
+}
+.instagram {
+  background-image: url('../img/icons/instagram.png');
+}
+.like {
+  background-image: url('../img/icons/like.png');
+}
+.enroll {
+  background-image: url('../img/icons/enroll.png');
+}

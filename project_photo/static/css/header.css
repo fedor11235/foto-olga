@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 4vh; */
+  /* width: 100%; */
+  padding: 18px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+.logo {
+  font-size: 46px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}

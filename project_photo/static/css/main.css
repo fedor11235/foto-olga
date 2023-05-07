@@ -1,18 +1,3 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* height: 4vh; */
-  /* width: 100%; */
-  padding: 18px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-}
-.logo {
-  font-size: 46px;
-  font-weight: 700;
-  color: white;
-  text-transform: uppercase;
-}
 .wrapper {
   display: flex;
   gap: 16px;
@@ -48,35 +33,41 @@
   z-index: 2;
   scale: 1.1;
 }
-.footer {
-  position: sticky;
+#photo-popup {
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  display: flex;
-  opacity: .4;
-  gap: 12px;
-  padding-left: 18px;
-  padding-bottom: 18px;
-  height: 20px;
+  overflow: scroll;
   z-index: 3;
 }
-.icon {
-  height: 19px;
-  width: 19px;
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  opacity: .8;
+}
+#close {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  height: 21px;
+  width: 21px;
+  color: #e8e8e8;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   cursor: pointer;
+  background-image: url('../img/icons/close.png');
 }
-.share {
-  background-image: url('../img/icons/share.png');
-}
-.instagram {
-  background-image: url('../img/icons/instagram.png');
-}
-.like {
-  background-image: url('../img/icons/like.png');
-}
-.enroll {
-  background-image: url('../img/icons/enroll.png');
+.photo-origin {
+  width: 80vw;
 }
 
