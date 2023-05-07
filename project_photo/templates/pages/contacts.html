@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/contacts.css') }}">
+{% endblock %}
+
+{% block content %}
+  <div class="header">
+    <div class="logo">logo</div>
+    <div class="wrapper">
+      <a class="section linck" href="{{ url_for('main.index') }}">home</a>
+      <a
+        class="section linck"
+        href="https://www.instagram.com/cxgoehs/"
+        target="_blank"
+      >instagram</a>
+      <a class="section linck" href="{{ url_for('main.contacts') }}">contacts</a>
+    </div>
+  </div>
+  <div class="contacts">
+    <div>PHOTOGRAPHER MARCO LESSI</br>BASED IN MILAN (Italy)</div>
+    <div>CONTACT</div>
+    <div>info@marcolessi.com</div>
+    <div>FOLLOW ME ON</div>
+    <div>
+      <a
+        class="linck"
+        href="https://www.instagram.com/cxgoehs/"
+        target="_blank"
+      >instagram</a>
+    </div>
+  </div>
+{% endblock %}

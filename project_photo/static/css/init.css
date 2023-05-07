@@ -1,0 +1,10 @@
+body {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  user-select: none;
+  background-color: black;
+  margin: 0;
+}
+.linck {
+  text-decoration: none;
+}

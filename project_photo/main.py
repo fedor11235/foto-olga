@@ -8,6 +8,10 @@ main = Blueprint('main', __name__)
 def index():
   return render_template('pages/main.html')
 
+@main.route('/contacts')
+def contacts():
+  return render_template('pages/contacts.html')
+
 @main.route('/admin')
 def admin():
   return render_template('pages/admin.html')
