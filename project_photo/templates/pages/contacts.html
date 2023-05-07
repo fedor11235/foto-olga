@@ -18,17 +18,20 @@
       <a class="section linck" href="{{ url_for('main.contacts') }}">contacts</a>
     </div>
   </div>
-  <div class="contacts">
-    <div>PHOTOGRAPHER MARCO LESSI</br>BASED IN MILAN (Italy)</div>
-    <div>CONTACT</div>
-    <div>info@marcolessi.com</div>
-    <div>FOLLOW ME ON</div>
-    <div>
-      <a
-        class="linck"
-        href="https://www.instagram.com/cxgoehs/"
-        target="_blank"
-      >instagram</a>
+  <div class="contacts-wrapper">
+    <div class="contacts">
+      <div class="avatar" style="background-image: url('static/img/test_avatar.jpg')"></div>
+      <div class="contacts-title">PHOTOGRAPHER MARCO LESSI</br>BASED IN MILAN (Italy)</div>
+      <div class="contacts-title">CONTACT</div>
+      <div class="info">info@marcolessi.com</div>
+      <div class="contacts-title">FOLLOW ME ON</div>
+      <div>
+        <a
+          class="linck info"
+          href="https://www.instagram.com/cxgoehs/"
+          target="_blank"
+        >instagram</a>
+      </div>
     </div>
   </div>
 {% endblock %}
