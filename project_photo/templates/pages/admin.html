@@ -14,11 +14,17 @@
     <input type="file" id="avatarInput" accept="image/*">
     <div class="admin">
       <div class="avatar" style="background-image: url('static/img/admin/avatar.jpg')"></div>
-      <form class="admin" method="post" action="/login">
+      <form class="admin" method="post" action="/edit">
         <label for="instagram">instagram</label>
-        <input required name="instagram" id="instagram" type="text" placeholder="instagram">
+        <input name="instagram" id="instagram" type="text" placeholder="instagram">
         <label for="nick">nick</label>
-        <input required name="nick" id="nick" type="password" placeholder="nick">
+        <input name="nick" id="nick" type="text" placeholder="nick">
+        <label for="email">email</label>
+        <input name="email" id="email" type="email" placeholder="email">
+        <label for="login">login</label>
+        <input name="login" id="login" type="text" placeholder="login">
+        <label for="password">password</label>
+        <input name="password" id="password" type="text" placeholder="password">
         <button class="button">сохранить</button>
       </form>
       <button class="button"id="upload-avatar">загрузить автарку</button>
@@ -37,7 +43,7 @@
       {% endfor %}
     </div>
   {% else %}
-    <form class="admin" method="post" action="/signup">
+    <form class="admin" method="post" action="/login">
       <input required name="login" type="text" placeholder="login">
       <input required name="password" type="password" placeholder="password">
       <button class="button">log in</button>
