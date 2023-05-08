@@ -20,7 +20,7 @@
         <button class="button">сохранить</button>
       </form>
       <button class="button"id="upload-photo">загрузить фото</button>
-      <a class="linck button button-linck" href="{{ url_for('photo.deleted_photo') }}" class="logout">удалить все фото</a>
+      <a class="linck button button-linck" href="{{ url_for('photo.deleted_all_photo') }}" class="logout">удалить все фото</a>
       <a class="linck button button-linck" href="{{ url_for('auth.logout') }}" class="logout">выйти</a>
     </div>
     {%if images != [] %}
@@ -28,7 +28,9 @@
     {% endif %}
     <div class="photos">
       {% for image in images %}
-        <div class="photo" style="background-image: url('static/img/photos/{{image}}')" ></div>
+        <div class="photo" style="background-image: url('static/img/photos/{{image}}')" >
+          <div class="delete" data-file-name="{{image}}"></div>
+        </div>
       {% endfor %}
     </div>
   {% else %}

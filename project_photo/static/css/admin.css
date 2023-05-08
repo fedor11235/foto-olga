@@ -64,16 +64,29 @@ label {
   text-align: center;
 }
 .photo {
-  cursor: pointer;
-  transition: scale 1s;
+  position: relative;
   height: 20vh;
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 }
-.photo:hover {
-  z-index: 2;
-  scale: 1.1;
+.delete {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 8px;
+  height: 14px;
+  width: 14px;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  background-image: url('../img/icons/close.png');
+  cursor: pointer;
 }
+
 

@@ -4,28 +4,25 @@ let fileInput
 document.addEventListener("DOMContentLoaded", handlerDOMContentLoaded)
 
 function handlerDOMContentLoaded() {
-  const test = document.getElementById('test')
+  const photosDelete = document.getElementsByClassName('delete')
   buttonUploadPhoto = document.getElementById('upload-photo')
   fileInput = document.getElementById('fileInput')
   buttonUploadPhoto.addEventListener('click', handlerClickUploadPhoto)
   fileInput.addEventListener('change', handlerClickChangeFileInput)
-
-  // const Request = new XMLHttpRequest()
-  // Request.open('GET', '/get_images', true)
-  // Request.onreadystatechange = () => {
-  //   if (Request.readyState == 4) {
-  //     var myArr = JSON.parse(Request.responseText)
-  //     console.log(myArr)
-  //     console.log(typeof(myArr.images))
-  //     console.log(myArr.images)
-  //     test.src='/static/photos/' + myArr.images[0]
-  //   }
-  // }
-  // Request.send()
+  for(const photoDelete of photosDelete){ 
+    photoDelete.addEventListener('click', handlerClickPhotoDelete)
+  }
 }
+
+function handlerClickPhotoDelete(event) {
+  const fileName = event.target.dataset.fileName
+  sendingRequestPhotoDeleted(fileName)
+}
+
 function handlerClickUploadPhoto() {
   fileInput.click()
 }
+
 function handlerClickChangeFileInput(event) {
   const image = event.target.files[0]
   if(!image) {
@@ -43,38 +40,36 @@ function handlerClickChangeFileInput(event) {
   const formData = new FormData
   formData.append('image', image)
 
-  fetch('/upload_photo', {
+  const res = fetch('/upload_photo', {
     method: 'POST',
     body: formData
   })
-  // let blobUpload = new Blob([image], {type: 'image/jpg'})
-  // console.log(blobUpload.text)
-
-  payload = 'image=' + image
-  // sendingRequestToServer('POST', '/upload_photo', formData)
+  res.then(() => window.location.reload())
   event.target.value = ''
 }
-function sendingRequestToServer(method, url, payload) {
-  const Request = new XMLHttpRequest()
-  Request.open(method, url, true)
-  Request.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8')
-  Request.onreadystatechange = () => {
-    if (Request.readyState == 4) {
-      console.log('sending to the server was successful')
-    }
-  }
-  Request.send(payload)
-}
+
 function getFilteredFile(file) {
   if (/\.(jpg|jpeg|png|webp|JPG|PNG|JPEG|WEBP)$/.test(file.name)) {
     return true
   }
   return false
 }
+
 function checkSizeCompatibleOne(file) {
   const sizeInMb = (file.size / (1024 * 1024)).toFixed(2)
   if (sizeInMb > 5) {
     return false
   }
   return true
+}
+
+function sendingRequestPhotoDeleted(fileName) {
+  const Request = new XMLHttpRequest()
+  Request.open('POST', '/deleted_photo', true)
+  Request.onreadystatechange = () => {
+    if (Request.readyState == 4) window.location.reload()
+  }
+  Request.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8')
+  const payload = 'fileName=' + fileName
+  Request.send(payload)
 }
