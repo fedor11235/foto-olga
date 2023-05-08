@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template, request
-from .helpers import print_red
+from flask import Blueprint, render_template
+from .models import Photos
+from . import db
 
 main = Blueprint('main', __name__)
 
@@ -11,13 +12,9 @@ def index():
 def contacts():
   return render_template('pages/contacts.html')
 
-@main.route('/upload_photo', methods=['POST'])
-def upload_photo():
-  image  = request.form.get('image')
-  print_red(image)
-  return render_template('pages/contacts.html')
-
 @main.route('/admin', methods=['GET'])
 def admin():
-  return render_template('pages/admin.html')
+  images = db.session.query(Photos).all()
+  return render_template('pages/admin.html', images=images[0].image)
+
 

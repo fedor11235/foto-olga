@@ -10,3 +10,10 @@ class User(UserMixin, db.Model):
   password       = db.Column(db.String(100))
   # nick           = db.Column(db.String(100))
   # instagram      = db.Column(db.String(100))
+
+class Photos(db.Model):
+  __tablename__ = 'photo'
+
+  id             = db.Column(db.Integer, primary_key=True)
+
+  image          = db.Column(db.String(100))

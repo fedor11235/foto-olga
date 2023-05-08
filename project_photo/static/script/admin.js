@@ -14,14 +14,30 @@ function handlerClickUploadPhoto() {
 }
 function handlerClickChangeFileInput(event) {
   const image = event.target.files[0]
-  if(!checkSizeCompatibleOne(image)) {
-    console.log('файл большого размера')
+  if(!image) {
+    alert('файл не выбран')
+    return
   }
   if(!checkSizeCompatibleOne(image)) {
-    console.log('файл неправильного формата')
+    alert('файл большого размера')
+    return
   }
+  if(!checkSizeCompatibleOne(image)) {
+    alert('файл неправильного формата')
+    return
+  }
+  const formData = new FormData
+  formData.append('image', image)
+
+  const res = fetch('/upload_photo', {
+    method: 'POST',
+    body: formData
+  })
+  // let blobUpload = new Blob([image], {type: 'image/jpg'})
+  // console.log(blobUpload.text)
+
   payload = 'image=' + image
-  sendingRequestToServer('POST', '/upload_photo', payload)
+  // sendingRequestToServer('POST', '/upload_photo', formData)
   event.target.value = ''
 }
 function sendingRequestToServer(method, url, payload) {
