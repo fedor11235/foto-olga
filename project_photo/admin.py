@@ -1,7 +1,7 @@
 from flask import Blueprint, redirect, request, url_for
 from flask_login import login_required, current_user
-from .helpers import print_red, get_user
-from .models import User
+from .helpers import get_user
+from .models import Clients
 from . import db
 import os
 
@@ -51,7 +51,10 @@ def add_lick():
 
 @admin.route('/enroll', methods=['POST'])
 def enroll():
-  name    = request.form.get('name')
-  contact = request.form.get('contact')
-  consent = request.form.get('consent')
-  return redirect(url_for('main.admin'))
+  name       = request.form.get('name')
+  contacts    = request.form.get('contacts')
+  consent    = request.form.get('consent')
+  new_client = Clients(name=name, contacts=contacts, consent=consent)
+  db.session.add(new_client)
+  db.session.commit()
+  return redirect(url_for('main.index'))

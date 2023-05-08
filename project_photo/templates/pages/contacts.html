@@ -5,6 +5,10 @@
   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/contacts.css') }}">
 {% endblock %}
 
+{% block js %}
+  <script src="{{ url_for('static', filename= 'script/contacts.js') }}"></script>
+{% endblock %}
+
 {% block content %}
   <div class="contacts">
     <div class="avatar" style="background-image: url('static/img/admin/avatar.jpg')"></div>
@@ -19,5 +23,7 @@
         target="_blank"
       >instagram</a>
     </div>
+    <div class="contacts-title">оставить контактную информацию для связи с вами</div>
+    <button id="open-form-button" class="button">открыть форму</button>
   </div>
 {% endblock %}

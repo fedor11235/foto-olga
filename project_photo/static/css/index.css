@@ -1,12 +1,20 @@
 body {
   font-family: Verdana, Helvetica, Arial, sans-serif;
   overflow-x: hidden;
-  user-select: none;
   background-color: black;
   margin: 0;
 }
 .linck {
   text-decoration: none;
+}
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  opacity: .8;
 }
 .number-likes {
   color: #6B6B6B;
@@ -93,3 +101,4 @@ label {
   background-image: url('../img/icons/close.png');
   z-index: 3;
 }
+

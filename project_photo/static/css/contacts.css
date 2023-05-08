@@ -25,3 +25,8 @@
   background-position: center;
   margin: 32px 0;
 }
+#open-form-button {
+  padding: 0 32px;
+  margin-top: 16px;
+}
+
