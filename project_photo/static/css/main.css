@@ -52,8 +52,12 @@
   background-image: url('../img/icons/close.png');
   z-index: 3;
 }
-.photo-origin {
+.photo-origin-wrapper {
+  display: flex;
+  justify-content: center;
   width: 80vw;
+  height: 90vh;
   z-index: 3;
 }
+
 
