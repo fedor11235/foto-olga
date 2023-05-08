@@ -20,8 +20,9 @@ def contacts():
   return render_template(
     'pages/contacts.html',
     instagram = user.instagram,
-    email = user.email,
-    nick = user.nick
+    email     = user.email,
+    nick      = user.nick,
+    likes     = user.likes
   )
 
 @main.route('/admin', methods=['GET'])

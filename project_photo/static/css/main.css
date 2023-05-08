@@ -26,7 +26,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: scroll;
   z-index: 3;
 }
 .bg {
@@ -38,7 +37,7 @@
   background-color: white;
   opacity: .8;
 }
-#close {
+#close-photo {
   position: fixed;
   top: 32px;
   right: 32px;

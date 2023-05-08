@@ -22,7 +22,7 @@
 .share {
   background-image: url('../img/icons/share.png');
 }
-.enroll {
+#enroll {
   background-image: url('../img/icons/enroll.png');
 }
 #like {

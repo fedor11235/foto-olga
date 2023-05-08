@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', handlerDOMContentLoaded)
 
 function handlerDOMContentLoaded() {
   const photos = document.getElementsByClassName('photo')
-  const close = document.getElementById('close')
+  const close = document.getElementById('close-photo')
   photoPopup = document.getElementById('photo-popup')
   photoOrigin = document.getElementById('photo-origin')
   for(const photo of photos){ 

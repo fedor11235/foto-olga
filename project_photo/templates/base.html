@@ -12,6 +12,21 @@
       <title>Фотограф Ольга</title>
   </head>
   <body>
+    <div id="enroll-popup">
+      <div class="bg"></div>
+      <div id="close-contact"></div>
+      <form class="enroll-form" method="post" action="/enroll">
+        <label for="name">как к вам обращаться</label>
+        <input required name="name" id="name" type="text" placeholder="name">
+        <label for="contact">как с вами связаться</label>
+        <input required name="contact" id="contact" type="text" placeholder="contact">
+        <div class="consent-container">
+          <label for="consent">согласие на обработку данных</label>
+          <input required type="checkbox" id="consent" name="consent">
+        </div>
+        <button class="button">записаться</button>
+      </form>
+    </div>
     <div class="header">
       <div class="logo">logo</div>
       <div class="wrapper">
@@ -30,7 +45,7 @@
         <div class="icon instagram"></div>
       </a>
       <div class="icon share"></div>
-      <div class="icon enroll"></div>
+      <div class="icon" id="enroll"></div>
       <div class="icon" id="like"></div>
       <div class="number-likes">{{likes}}</div>
     </div>

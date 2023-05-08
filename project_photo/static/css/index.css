@@ -14,3 +14,82 @@ body {
   line-height: 19px;
   margin-left: -8px;
 }
+#enroll-popup {
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+.enroll-form {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 60vw;
+  height: 40vh;
+  z-index: 3;
+  background-color: black;
+  border-radius: 16px;
+  padding: 32px;
+}
+input[type="checkbox"] {
+  border: 0;
+  outline: 0;
+  border-radius: 6px;
+  height: 21px;
+  width: 21px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+input[type="text"] {
+  border: 0;
+  outline: 0;
+  border-radius: 6px;
+  height: 41px;
+  padding: 0 8px;
+}
+label {
+  color: rgb(179, 154, 107);
+  font-size: 16px;
+  line-height: 41px;
+}
+.consent-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 41px;
+}
+.button {
+  height: 41px;
+  border: 0;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: scale .3s;
+  font-size: 16px;
+}
+.button:hover {
+  background-color: rgb(179, 154, 107);
+}
+.button:active {
+  scale: .9;
+}
+#close-contact {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  height: 21px;
+  width: 21px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  background-image: url('../img/icons/close.png');
+  z-index: 3;
+}

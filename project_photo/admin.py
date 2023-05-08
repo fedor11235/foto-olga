@@ -48,3 +48,10 @@ def add_lick():
     user.likes = 1
   db.session.commit()
   return 'successfully'
+
+@admin.route('/enroll', methods=['POST'])
+def enroll():
+  name    = request.form.get('name')
+  contact = request.form.get('contact')
+  consent = request.form.get('consent')
+  return redirect(url_for('main.admin'))
