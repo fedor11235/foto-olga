@@ -58,3 +58,11 @@ def enroll():
   db.session.add(new_client)
   db.session.commit()
   return redirect(url_for('main.index'))
+
+@admin.route('/deleted_customer', methods=['POST'])
+def deleted_photo():
+  customerId = request.form.get('customerId')
+  client = Clients.query.filter_by(id=customerId).first()
+  db.session.delete(client)
+  db.session.commit()
+  return 'successfully'

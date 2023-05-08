@@ -1,6 +1,6 @@
 import os
-from flask import Blueprint, request, redirect, url_for
-from .helpers import print_red, get_images
+from flask import Blueprint, request
+from .helpers import print_red
 
 folder_with_pictures = './project_photo/static/img/photos'
 

@@ -66,10 +66,35 @@ label {
   margin: 60px;
   margin-top: 0;
 }
-.photos-header {
+.admin-header {
   color: white;
   line-height: 90px;
   text-align: center;
+}
+.customers {
+  display: flex;
+  gap: 8px;
+  color: white;
+  padding: 18px;
+  margin-bottom: 90px;
+}
+.customer {
+  position: relative;
+  padding: 16px;
+  border: 1px solid rgb(179, 154, 107);
+  border-radius: 8px;
+}
+.delete-customer {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  height: 14px;
+  width: 14px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  background-image: url('../img/icons/close.png');
 }
 .photo {
   position: relative;
@@ -94,7 +119,6 @@ label {
   background-position: center;
   cursor: pointer;
   background-image: url('../img/icons/close.png');
-  cursor: pointer;
 }
 
 

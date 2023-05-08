@@ -33,7 +33,7 @@
       <a class="linck button button-linck" href="{{ url_for('auth.logout') }}" class="logout">выйти</a>
     </div>
     {%if images != [] %}
-      <div class="photos-header">звгруженные фото:</div>
+      <div class="admin-header">загруженные фото</div>
     {% endif %}
     <div class="photos">
       {% for image in images %}
@@ -42,6 +42,19 @@
         </div>
       {% endfor %}
     </div>
+    {%if clients != [] %}
+      <div class="admin-header">заявки</div>
+    {% endif %}
+    <div class="customers">
+    {% for client in clients %}
+      <div class="customer">
+        <div>{{client.name}}</div>
+        <div>{{client.contacts}}</div>
+        <div>{{client.consent}}</div>
+        <div class="delete-customer" data-customer-id="{{client.id}}"></div>
+      </div>
+    {% endfor %}
+  </div>
   {% else %}
     <form class="admin" method="post" action="/login">
       <input required name="login" type="text" placeholder="login">

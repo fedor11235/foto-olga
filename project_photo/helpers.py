@@ -16,4 +16,16 @@ def get_images():
 def get_user():
   return User.query.filter_by(id=1).first()
 
+def clients_object_to_dict(clients_object):
+  clients_dict = []
+  for client_object in clients_object:
+    user_dict = {
+      'id' : client_object.id,
+      'name' : client_object.name,
+      'contacts': client_object.contacts,
+      'consent': client_object.consent
+    }
+    clients_dict.append(user_dict)
+  return clients_dict
+
 

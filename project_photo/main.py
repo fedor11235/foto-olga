@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
-from .helpers import get_images, get_user
+from .helpers import get_images, get_user, clients_object_to_dict, print_red
+from .models import Clients
 
 main = Blueprint('main', __name__)
 
@@ -27,6 +28,8 @@ def contacts():
 
 @main.route('/admin', methods=['GET'])
 def admin():
-  images = get_images()
-  return render_template('pages/admin.html', images=images)
+  users_object = Clients.query.all()
+  images       = get_images()
+  clients      = clients_object_to_dict(users_object)
+  return render_template('pages/admin.html', images=images, clients=clients)
 
