@@ -1,5 +1,7 @@
 venv
-# .env
+.env
 __pycache__
 instance
 TODO
+**/photos/*
+**/admin/*

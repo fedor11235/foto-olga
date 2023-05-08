@@ -1,12 +1,12 @@
 from flask import Blueprint, render_template
-from .models import Photos
-from . import db
+from .helpers import get_images
 
 main = Blueprint('main', __name__)
 
 @main.route('/', methods=['GET'])
 def index():
-  return render_template('pages/main.html')
+  images = get_images()
+  return render_template('pages/main.html', images=images)
 
 @main.route('/contacts', methods=['GET'])
 def contacts():
@@ -14,7 +14,8 @@ def contacts():
 
 @main.route('/admin', methods=['GET'])
 def admin():
-  images = db.session.query(Photos).all()
-  return render_template('pages/admin.html', images=images[0].image)
+  images = get_images()
+  return render_template('pages/admin.html', images=images)
+
 
 

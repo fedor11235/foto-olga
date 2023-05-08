@@ -4,10 +4,24 @@ let fileInput
 document.addEventListener("DOMContentLoaded", handlerDOMContentLoaded)
 
 function handlerDOMContentLoaded() {
+  const test = document.getElementById('test')
   buttonUploadPhoto = document.getElementById('upload-photo')
   fileInput = document.getElementById('fileInput')
   buttonUploadPhoto.addEventListener('click', handlerClickUploadPhoto)
   fileInput.addEventListener('change', handlerClickChangeFileInput)
+
+  // const Request = new XMLHttpRequest()
+  // Request.open('GET', '/get_images', true)
+  // Request.onreadystatechange = () => {
+  //   if (Request.readyState == 4) {
+  //     var myArr = JSON.parse(Request.responseText)
+  //     console.log(myArr)
+  //     console.log(typeof(myArr.images))
+  //     console.log(myArr.images)
+  //     test.src='/static/photos/' + myArr.images[0]
+  //   }
+  // }
+  // Request.send()
 }
 function handlerClickUploadPhoto() {
   fileInput.click()
@@ -29,7 +43,7 @@ function handlerClickChangeFileInput(event) {
   const formData = new FormData
   formData.append('image', image)
 
-  const res = fetch('/upload_photo', {
+  fetch('/upload_photo', {
     method: 'POST',
     body: formData
   })

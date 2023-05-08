@@ -1,24 +1,24 @@
-from flask import Blueprint, request, render_template
-from .helpers import print_red
-from .models import Photos
 import os
-from . import db
+from flask import Blueprint, request, redirect, url_for
+
+folder_with_pictures = './project_photo/static/img/photos'
 
 photo = Blueprint('photo', __name__)
 
 @photo.route('/upload_photo', methods=['POST'])
 def upload_photo():
   image = request.files['image']
-  image.save(os.path.join(os.getcwd(), "project_photo/static", "current_image.jpg"))
-  
-  new_photo = Photos(image=image)
-  print_red(new_photo)
-  db.session.add(new_photo)
-  db.session.commit()
-  return render_template('pages/admin.html')
+
+  number_photos = 0
+
+  for _ in os.listdir(folder_with_pictures):
+    number_photos += 1
+
+  image.save(os.path.join(os.getcwd(), folder_with_pictures, str(number_photos) +".jpg"))
+  return redirect(url_for('main.admin'))
 
 @photo.route('/deleted_photo', methods=['GET'])
 def deleted_photo():
-  db.session.query(Photos).delete()
-  db.session.commit()
-  return render_template('pages/admin.html')
+  for f in os.listdir(folder_with_pictures):
+      os.remove(os.path.join(folder_with_pictures, f))
+  return redirect(url_for('main.admin'))

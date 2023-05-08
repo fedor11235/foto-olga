@@ -10,9 +10,6 @@
 
 {% block content %}
   {% if current_user.is_authenticated %}
-    
-    <img class="test" src="{{ images }}" alt="test">
-    
     <input type="file" id="fileInput" accept="image/*">
     <div class="admin">
       <form class="admin" method="post" action="/login">
@@ -23,9 +20,12 @@
         <button class="button">сохранить</button>
       </form>
       <button class="button"id="upload-photo">загрузить фото</button>
-      <a class="linck button button-linck" href="{{ url_for('main.deleted_photo') }}" class="logout">удалить все фото</a>
+      <a class="linck button button-linck" href="{{ url_for('photo.deleted_photo') }}" class="logout">удалить все фото</a>
       <a class="linck button button-linck" href="{{ url_for('auth.logout') }}" class="logout">выйти</a>
     </div>
+    {% for image in images %}
+      <div class="test" style="background-image: url('static/img/photos/{{image}}')" ></div>
+    {% endfor %}
   {% else %}
     <form class="admin" method="post" action="/signup">
       <input required name="login" type="text" placeholder="login">
