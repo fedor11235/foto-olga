@@ -1,8 +1,3 @@
-.test {
-  color: white;
-  height: 100px;
-  width: 100px;
-}
 .admin {
   display: flex;
   flex-direction: column;
@@ -11,8 +6,21 @@
   margin: auto;
   margin-top: 10%;
 }
-#fileInput {
+#photoInput {
   display: none;
+}
+#avatarInput {
+  display: none;
+}
+.avatar {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 input {
   border: 0;

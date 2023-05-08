@@ -1,14 +1,20 @@
 let buttonUploadPhoto
-let fileInput
+let buttonUploadAvatar
+let photoInput
+let avatarInput
 
 document.addEventListener("DOMContentLoaded", handlerDOMContentLoaded)
 
 function handlerDOMContentLoaded() {
   const photosDelete = document.getElementsByClassName('delete')
   buttonUploadPhoto = document.getElementById('upload-photo')
-  fileInput = document.getElementById('fileInput')
+  photoInput = document.getElementById('photoInput')
+  buttonUploadAvatar = document.getElementById('upload-avatar')
+  avatarInput = document.getElementById('avatarInput')
   buttonUploadPhoto.addEventListener('click', handlerClickUploadPhoto)
-  fileInput.addEventListener('change', handlerClickChangeFileInput)
+  buttonUploadAvatar.addEventListener('click', handlerClickUploadAvatar)
+  photoInput.addEventListener('change', (event) => handlerClickChangeInput(event, '/upload_photo'))
+  avatarInput.addEventListener('change', (event) => handlerClickChangeInput(event, '/upload_avatar'))
   for(const photoDelete of photosDelete){ 
     photoDelete.addEventListener('click', handlerClickPhotoDelete)
   }
@@ -20,10 +26,14 @@ function handlerClickPhotoDelete(event) {
 }
 
 function handlerClickUploadPhoto() {
-  fileInput.click()
+  photoInput.click()
 }
 
-function handlerClickChangeFileInput(event) {
+function handlerClickUploadAvatar() {
+  avatarInput.click()
+}
+
+function handlerClickChangeInput(event, url) {
   const image = event.target.files[0]
   if(!image) {
     alert('файл не выбран')
@@ -40,7 +50,7 @@ function handlerClickChangeFileInput(event) {
   const formData = new FormData
   formData.append('image', image)
 
-  const res = fetch('/upload_photo', {
+  const res = fetch(url, {
     method: 'POST',
     body: formData
   })

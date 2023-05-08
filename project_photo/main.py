@@ -17,5 +17,3 @@ def admin():
   images = get_images()
   return render_template('pages/admin.html', images=images)
 
-
-
