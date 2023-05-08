@@ -13,7 +13,7 @@ def index():
     images    = images,
     likes     = user.likes,
     instagram = user.instagram,
-    page      = 'main'
+    page      = 'MAIN'
   )
 
 @main.route('/contacts', methods=['GET'])
@@ -25,7 +25,7 @@ def contacts():
     email     = user.email,
     nick      = user.nick,
     likes     = user.likes,
-    page      = 'contacts'
+    page      = 'CONTACTS'
   )
 
 @main.route('/admin', methods=['GET'])

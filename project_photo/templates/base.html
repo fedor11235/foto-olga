@@ -9,7 +9,7 @@
       <script src="{{ url_for('static', filename= 'script/index.js') }}"></script>
       {% block css %} {% endblock %}
       {% block js %} {% endblock %}
-      <title>Фотограф Ольга</title>
+      <title >{{page}}</title>
   </head>
   <body>
     <div id="enroll-popup">
@@ -30,7 +30,7 @@
     <div class="header">
       <div class="logo">logo</div>
       <div class="wrapper">
-        {% if page == 'main' %}
+        {% if page == 'MAIN' %}
           <a class="section linck section-active" href="{{ url_for('main.index') }}">home</a>
         {% else %}
           <a class="section linck" href="{{ url_for('main.index') }}">home</a>
@@ -40,7 +40,7 @@
           href="{{instagram}}"
           target="_blank"
         >instagram</a>
-        {% if page == 'contacts' %}
+        {% if page == 'CONTACTS' %}
           <a class="section linck section-active" href="{{ url_for('main.contacts') }}">contacts</a>
         {% else %}
           <a class="section linck " href="{{ url_for('main.contacts') }}">contacts</a>
