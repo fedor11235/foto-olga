@@ -1,16 +1,28 @@
 from flask import Blueprint, render_template
-from .helpers import get_images
+from .helpers import get_images, get_user
 
 main = Blueprint('main', __name__)
 
 @main.route('/', methods=['GET'])
 def index():
   images = get_images()
-  return render_template('pages/main.html', images=images)
+  user = get_user()
+  return render_template(
+    'pages/main.html',
+    images    = images,
+    likes     = user.likes,
+    instagram = user.instagram
+  )
 
 @main.route('/contacts', methods=['GET'])
 def contacts():
-  return render_template('pages/contacts.html')
+  user = get_user()
+  return render_template(
+    'pages/contacts.html',
+    instagram = user.instagram,
+    email = user.email,
+    nick = user.nick
+  )
 
 @main.route('/admin', methods=['GET'])
 def admin():

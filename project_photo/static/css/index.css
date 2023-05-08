@@ -8,3 +8,9 @@ body {
 .linck {
   text-decoration: none;
 }
+.number-likes {
+  color: #6B6B6B;
+  font-size: 14px;
+  line-height: 19px;
+  margin-left: -8px;
+}

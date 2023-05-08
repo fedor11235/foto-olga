@@ -1,3 +1,4 @@
+from .models import User
 import os
 
 folder_with_pictures = './project_photo/static/img/photos'
@@ -11,4 +12,8 @@ def get_images():
   for filename in os.listdir(folder_with_pictures):
     images.append(filename)
   return images
+
+def get_user():
+  return User.query.filter_by(id=1).first()
+
 

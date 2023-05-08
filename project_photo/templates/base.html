@@ -6,6 +6,7 @@
       <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
       <link rel="stylesheet" href="{{ url_for('static', filename= 'css/header.css') }}">
       <link rel="stylesheet" href="{{ url_for('static', filename= 'css/footer.css') }}">
+      <script src="{{ url_for('static', filename= 'script/index.js') }}"></script>
       {% block css %} {% endblock %}
       {% block js %} {% endblock %}
       <title>Фотограф Ольга</title>
@@ -17,7 +18,7 @@
         <a class="section linck" href="{{ url_for('main.index') }}">home</a>
         <a
           class="section linck"
-          href="https://www.instagram.com/cxgoehs/"
+          href="{{instagram}}"
           target="_blank"
         >instagram</a>
         <a class="section linck" href="{{ url_for('main.contacts') }}">contacts</a>
@@ -25,10 +26,13 @@
     </div>
     {% block content %} {% endblock %}
     <div id="footer">
-      <div class="icon instagram"></div>
+      <a href="{{instagram}}" target="_blank">
+        <div class="icon instagram"></div>
+      </a>
       <div class="icon share"></div>
       <div class="icon enroll"></div>
-      <div class="icon like"></div>
+      <div class="icon" id="like"></div>
+      <div class="number-likes">{{likes}}</div>
     </div>
   </body>
 </html>

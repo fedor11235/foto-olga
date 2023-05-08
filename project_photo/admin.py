@@ -1,6 +1,7 @@
 from flask import Blueprint, redirect, request, url_for
 from flask_login import login_required, current_user
-from .helpers import print_red
+from .helpers import print_red, get_user
+from .models import User
 from . import db
 import os
 
@@ -40,4 +41,10 @@ def edit():
 
 @admin.route('/add_like', methods=['GET'])
 def add_lick():
-  pass
+  user = get_user()
+  if user.likes and not user.likes == 0:
+    user.likes += 1
+  else:
+    user.likes = 1
+  db.session.commit()
+  return 'successfully'
