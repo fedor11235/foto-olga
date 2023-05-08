@@ -15,14 +15,8 @@
     <div class="bg"></div>
   </div>
   <div class="main">
-    <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
-    <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
-    <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
-    <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
-    <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
-    <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
-    <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
-    <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
-    <div class="photo" style="background-image: url('static/img/test_photo.jpg')" ></div>
+    {% for image in images %}
+      <div class="photo" style="background-image: url('static/img/photos/{{image}}')" ></div>
+    {% endfor %}
   </div>
 {% endblock %}

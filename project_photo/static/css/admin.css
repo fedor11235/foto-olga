@@ -51,4 +51,29 @@ label {
   color: rgb(179, 154, 107);
   font-size: 14px;
 }
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin: 60px;
+  margin-top: 0;
+}
+.photos-header {
+  color: white;
+  line-height: 90px;
+  text-align: center;
+}
+.photo {
+  cursor: pointer;
+  transition: scale 1s;
+  height: 20vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.photo:hover {
+  z-index: 2;
+  scale: 1.1;
+}
 

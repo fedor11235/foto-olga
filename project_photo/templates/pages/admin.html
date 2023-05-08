@@ -23,9 +23,14 @@
       <a class="linck button button-linck" href="{{ url_for('photo.deleted_photo') }}" class="logout">удалить все фото</a>
       <a class="linck button button-linck" href="{{ url_for('auth.logout') }}" class="logout">выйти</a>
     </div>
-    {% for image in images %}
-      <div class="test" style="background-image: url('static/img/photos/{{image}}')" ></div>
-    {% endfor %}
+    {%if images != [] %}
+      <div class="photos-header">звгруженные фото:</div>
+    {% endif %}
+    <div class="photos">
+      {% for image in images %}
+        <div class="photo" style="background-image: url('static/img/photos/{{image}}')" ></div>
+      {% endfor %}
+    </div>
   {% else %}
     <form class="admin" method="post" action="/signup">
       <input required name="login" type="text" placeholder="login">
