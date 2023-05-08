@@ -22,6 +22,6 @@
   color: white;
   cursor: pointer;
 }
-.section:hover {
+.section-active {
   color: rgb(179, 154, 107);
 }

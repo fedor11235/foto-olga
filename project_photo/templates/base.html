@@ -30,13 +30,21 @@
     <div class="header">
       <div class="logo">logo</div>
       <div class="wrapper">
-        <a class="section linck" href="{{ url_for('main.index') }}">home</a>
+        {% if page == 'main' %}
+          <a class="section linck section-active" href="{{ url_for('main.index') }}">home</a>
+        {% else %}
+          <a class="section linck" href="{{ url_for('main.index') }}">home</a>
+        {% endif %}
         <a
           class="section linck"
           href="{{instagram}}"
           target="_blank"
         >instagram</a>
-        <a class="section linck" href="{{ url_for('main.contacts') }}">contacts</a>
+        {% if page == 'contacts' %}
+          <a class="section linck section-active" href="{{ url_for('main.contacts') }}">contacts</a>
+        {% else %}
+          <a class="section linck " href="{{ url_for('main.contacts') }}">contacts</a>
+        {% endif %}
       </div>
     </div>
     {% block content %} {% endblock %}

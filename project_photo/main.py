@@ -12,7 +12,8 @@ def index():
     'pages/main.html',
     images    = images,
     likes     = user.likes,
-    instagram = user.instagram
+    instagram = user.instagram,
+    page      = 'main'
   )
 
 @main.route('/contacts', methods=['GET'])
@@ -23,7 +24,8 @@ def contacts():
     instagram = user.instagram,
     email     = user.email,
     nick      = user.nick,
-    likes     = user.likes
+    likes     = user.likes,
+    page      = 'contacts'
   )
 
 @main.route('/admin', methods=['GET'])
