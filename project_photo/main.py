@@ -33,5 +33,10 @@ def admin():
   users_object = Clients.query.all()
   images       = get_images()
   clients      = clients_object_to_dict(users_object)
-  return render_template('pages/admin.html', images=images, clients=clients)
+  return render_template(
+    'pages/admin.html',
+    images  = images,
+    clients = clients,
+    page    = 'ADMIN'
+  )
 
