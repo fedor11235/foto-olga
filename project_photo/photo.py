@@ -1,6 +1,5 @@
 import os
-from flask import Blueprint, request
-from .helpers import print_red
+from flask import Blueprint, request, redirect, url_for
 
 folder_with_pictures = './project_photo/static/img/photos'
 
@@ -20,7 +19,6 @@ def upload_photo():
 @photo.route('/deleted_photo', methods=['POST'])
 def deleted_photo():
   fileName    = request.form.get('fileName')
-  print_red(fileName)
   os.remove(os.path.join(folder_with_pictures, fileName))
   return 'successfully'
 
@@ -28,4 +26,4 @@ def deleted_photo():
 def deleted_all_photo():
   for f in os.listdir(folder_with_pictures):
       os.remove(os.path.join(folder_with_pictures, f))
-  return 'successfully'
+  return redirect(url_for('main.admin'))

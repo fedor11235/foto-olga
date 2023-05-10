@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from .helpers import get_images, get_user, clients_object_to_dict, print_red
+from .helpers import get_images, get_user, clients_object_to_dict
 from .models import Clients
 
 main = Blueprint('main', __name__)
