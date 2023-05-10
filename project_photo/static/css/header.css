@@ -5,7 +5,7 @@
   padding: 18px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
-.logo {
+#logo {
   font-size: 46px;
   font-weight: 700;
   color: white;
@@ -14,6 +14,21 @@
 .wrapper {
   display: flex;
   gap: 16px;
+}
+#burger {
+  display: none;
+  cursor: pointer;
+}
+.part-burger {
+  width: 32px;
+  height: 4px;
+  margin-bottom: 6px;
+  position: relative;
+  background-color: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0;
+  transition: transform .5s cubic-bezier(0.77,.2,.05,1),background-color .5s cubic-bezier(0.77,.2,.05,1),opacity .55s ease;
 }
 .section {
   font-size: 12px;
@@ -24,4 +39,23 @@
 }
 .section-active {
   color: rgb(179, 154, 107);
+}
+@media only screen and (max-width: 760px) {
+  .header {
+    border-color: rgb(255, 255, 255);
+    height: 60px;
+    padding: 0 18px;
+  }
+  .section {
+    font-size: 18px;
+  }
+  #logo {
+    font-size: 14px;
+  }
+  .wrapper {
+    display: none;
+  }
+  #burger {
+    display: block
+  }
 }

@@ -7,6 +7,20 @@ body {
   background-color: black;
   margin: 0;
 }
+#menu {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 64px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateY(-100%);
+  transition: transform .3s;
+  height: 100vh;
+  width: 60vw;
+  background-color: black;
+}
 .linck {
   text-decoration: none;
 }
@@ -68,6 +82,10 @@ label {
   color: rgb(179, 154, 107);
   font-size: 16px;
   line-height: 41px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* width: 300px; */
 }
 .consent-container {
   display: flex;
@@ -104,4 +122,14 @@ label {
   background-image: url('../img/icons/close.png');
   z-index: 3;
 }
-
+@media only screen and (max-width: 500px) {
+  .enroll-form {
+    width: 90vw;
+    padding: 16px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  label {
+    font-size: 12px;
+  }
+}

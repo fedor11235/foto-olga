@@ -12,6 +12,32 @@
       <title >{{page}}</title>
   </head>
   <body>
+    <div id="menu">
+      {% if page == 'MAIN' %}
+      <a class="section linck section-active" href="{{ url_for('main.index') }}">главная</a>
+      {% else %}
+        <a class="section linck" href="{{ url_for('main.index') }}">главная</a>
+      {% endif %}
+      <a
+        class="section linck"
+        href="{{instagram}}"
+        target="_blank"
+      >инстаграм</a>
+      {% if page == 'CONTACTS' %}
+        <a class="section linck section-active" href="{{ url_for('main.contacts') }}">контакты</a>
+      {% else %}
+        <a class="section linck " href="{{ url_for('main.contacts') }}">контакты</a>
+      {% endif %}
+      <div class="footer">
+        <a href="{{instagram}}" target="_blank">
+          <div class="icon instagram"></div>
+        </a>
+        <div class="icon share"></div>
+        <div class="icon" id="enroll"></div>
+        <div class="icon" id="like"></div>
+        <div class="number-likes">{{likes}}</div>
+      </div>
+    </div>
     <div id="enroll-popup">
       <div class="bg"></div>
       <div id="close-contact"></div>
@@ -28,27 +54,32 @@
       </form>
     </div>
     <div class="header">
-      <div class="logo">logo</div>
+      <div id="logo">лого</div>
+      <div id="burger">
+        <div class="part-burger" id="top-burger"></div>
+        <div class="part-burger" id="middle-burger"></div>
+        <div class="part-burger" id="bottom-burger"></div>
+      </div>
       <div class="wrapper">
         {% if page == 'MAIN' %}
-          <a class="section linck section-active" href="{{ url_for('main.index') }}">home</a>
+          <a class="section linck section-active" href="{{ url_for('main.index') }}">главная</a>
         {% else %}
-          <a class="section linck" href="{{ url_for('main.index') }}">home</a>
+          <a class="section linck" href="{{ url_for('main.index') }}">главная</a>
         {% endif %}
         <a
           class="section linck"
           href="{{instagram}}"
           target="_blank"
-        >instagram</a>
+        >инстаграм</a>
         {% if page == 'CONTACTS' %}
-          <a class="section linck section-active" href="{{ url_for('main.contacts') }}">contacts</a>
+          <a class="section linck section-active" href="{{ url_for('main.contacts') }}">контакты</a>
         {% else %}
-          <a class="section linck " href="{{ url_for('main.contacts') }}">contacts</a>
+          <a class="section linck " href="{{ url_for('main.contacts') }}">контакты</a>
         {% endif %}
       </div>
     </div>
     {% block content %} {% endblock %}
-    <div id="footer">
+    <div class="footer" id="footer">
       <a href="{{instagram}}" target="_blank">
         <div class="icon instagram"></div>
       </a>

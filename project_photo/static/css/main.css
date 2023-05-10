@@ -44,9 +44,33 @@
 .photo-origin-wrapper {
   display: flex;
   justify-content: center;
+  overflow: hidden;
   width: 80vw;
   height: 90vh;
   z-index: 3;
 }
+@media only screen and (max-width: 1200px) {
+  .main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 760px) {
+  #close-photo {
+    top: 16px;
+    right: 16px;
+  }
+  .photo-origin-wrapper {
+    height: 80vh;
+  }
+  #footer {
+    display: none;
+  }
+}
+@media only screen and (max-width: 610px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 

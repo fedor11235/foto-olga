@@ -18,10 +18,11 @@ function handlerClickOnPhoto(elem) {
   const backgroundImage = elem.target.style.backgroundImage
   const to = backgroundImage.length - 2
   url = backgroundImage.substring(5, to)
-  photoOrigin.src = url
   photoPopup.style.display='flex'
+  photoOrigin.src = url
 }
 
 function handlerClickOnClose() {
   photoPopup.style.display='none'
+  photoOrigin.style.opacity=''
 }

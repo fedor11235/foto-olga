@@ -1,4 +1,4 @@
-#footer {
+.footer {
   position: fixed;
   bottom: 0;
   display: flex;
@@ -27,4 +27,18 @@
 }
 #like {
   background-image: url('../img/icons/like.png');
+}
+@media only screen and (max-width: 760px) {
+  #footer {
+    display: none;
+  }
+  .footer {
+    position: initial;
+    padding: 0;
+  }
+  .icon {
+    height: 24px;
+    width: 24px;
+    filter: brightness(0) invert(1);
+  }
 }
