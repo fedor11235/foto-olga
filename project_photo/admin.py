@@ -23,6 +23,7 @@ def edit():
   email     = request.form.get('email')
   login     = request.form.get('login')
   password  = request.form.get('password')
+  full_name  = request.form.get('full_name')
 
   if instagram:
     current_user.instagram = instagram
@@ -34,6 +35,8 @@ def edit():
     current_user.login = login
   if password:
     current_user.password = password
+  if full_name:
+    current_user.full_name = full_name
 
   db.session.commit()
 

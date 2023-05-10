@@ -15,25 +15,27 @@
     <div class="admin">
       <div class="avatar" style="background-image: url('static/img/admin/avatar.jpg')"></div>
       <form class="admin" method="post" action="/edit">
-        <label for="instagram">instagram</label>
-        <input name="instagram" id="instagram" type="text" placeholder="instagram">
-        <label for="nick">nick</label>
-        <input name="nick" id="nick" type="text" placeholder="nick">
-        <label for="email">email</label>
-        <input name="email" id="email" type="email" placeholder="email">
-        <label for="login">login</label>
-        <input name="login" id="login" type="text" placeholder="login">
-        <label for="password">password</label>
-        <input name="password" id="password" type="text" placeholder="password">
-        <button class="button">сохранить</button>
+        <label for="instagram">Инстаграм</label>
+        <input name="instagram" id="instagram" type="text" placeholder="Инстаграм">
+        <label for="nick">Ник</label>
+        <input name="nick" id="nick" type="text" placeholder="Ник">
+        <label for="email">Email</label>
+        <input name="email" id="email" type="email" placeholder="Email">
+        <label for="full_name">Полное имя с фамилией</label>
+        <input name="full_name" id="full_name" type="email" placeholder="Полное имя с фамилией">
+        <label for="login">Логин</label>
+        <input name="login" id="login" type="text" placeholder="Логин">
+        <label for="password">Пароль</label>
+        <input name="password" id="password" type="text" placeholder="Пароль">
+        <button class="button">Сохранить</button>
       </form>
-      <button class="button"id="upload-avatar">загрузить автарку</button>
-      <button class="button"id="upload-photo">загрузить фото</button>
-      <a class="linck button button-linck" href="{{ url_for('photo.deleted_all_photo') }}" class="logout">удалить все фото</a>
-      <a class="linck button button-linck" href="{{ url_for('auth.logout') }}" class="logout">выйти</a>
+      <button class="button"id="upload-avatar">Загрузить автарку</button>
+      <button class="button"id="upload-photo">Загрузить фото</button>
+      <a class="linck button button-linck" href="{{ url_for('photo.deleted_all_photo') }}" class="login">Удалить все фото</a>
+      <a class="linck button button-linck" href="{{ url_for('auth.logout') }}" class="logout">Выйти</a>
     </div>
     {%if images != [] %}
-      <div class="admin-header">загруженные фото</div>
+      <div class="admin-header">Загруженные фото</div>
     {% endif %}
     <div class="photos">
       {% for image in images %}
@@ -43,7 +45,7 @@
       {% endfor %}
     </div>
     {%if clients != [] %}
-      <div class="admin-header">заявки</div>
+      <div class="admin-header">Заявки</div>
     {% endif %}
     <div class="customers">
     {% for client in clients %}
@@ -59,7 +61,7 @@
     <form class="admin" method="post" action="/login">
       <input required name="login" type="text" placeholder="login">
       <input required name="password" type="password" placeholder="password">
-      <button class="button">log in</button>
+      <button class="button">Вход</button>
       {% with messages = get_flashed_messages() %}
       {% if messages %}
         <div class="is-danger">{{ messages[0] }}</div>

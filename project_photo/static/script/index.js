@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', handlerDOMContentLoaded)
 function handlerDOMContentLoaded() {
   const like = document.getElementById('like')
   const enroll = document.getElementById('enroll')
+  const enrollMenu = document.getElementById('enroll-menu')
   const burger = document.getElementById('burger')
   logo = document.getElementById('logo')
   menu = document.getElementById('menu')
@@ -22,6 +23,7 @@ function handlerDOMContentLoaded() {
   burger.addEventListener('click', hendlerOpenMenu)
   like.addEventListener('click', hendlerSendingRequestLike)
   enroll.addEventListener('click', hendlerShowEnrollPopup)
+  enrollMenu.addEventListener('click', hendlerShowEnrollPopup)
   close.addEventListener('click', hendlerHideEnrollPopup)
 }
 

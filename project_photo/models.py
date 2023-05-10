@@ -10,6 +10,7 @@ class User(UserMixin, db.Model):
   password   = db.Column(db.String(100))
   email      = db.Column(db.String(100))
   nick       = db.Column(db.String(100))
+  full_name  = db.Column(db.String(100))
   instagram  = db.Column(db.String(100))
   likes      = db.Column(db.Integer)
 

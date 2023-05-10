@@ -16,6 +16,9 @@
   background-position: center;
   cursor: pointer;
 }
+.icon:hover {
+  filter: brightness(0) invert(1);
+}
 .instagram {
   background-image: url('../img/icons/instagram.png');
 }
@@ -25,8 +28,17 @@
 #enroll {
   background-image: url('../img/icons/enroll.png');
 }
+#enroll-menu {
+  background-image: url('../img/icons/enroll.png');
+}
 #like {
   background-image: url('../img/icons/like.png');
+}
+.number-likes {
+  color: #6B6B6B;
+  font-size: 14px;
+  line-height: 19px;
+  margin-left: 26px;
 }
 @media only screen and (max-width: 760px) {
   #footer {
@@ -40,5 +52,14 @@
     height: 24px;
     width: 24px;
     filter: brightness(0) invert(1);
+  }
+  .number-likes {
+    font-size: 18px;
+    line-height: 24px;
+    margin-left: 32px;
+  }
+  .number-likes:hover {
+    filter: brightness(0) invert(rgb(179, 154, 107));
+    /* background-color: rgb(179, 154, 107); */
   }
 }
