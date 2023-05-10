@@ -23,7 +23,6 @@ def login():
   return redirect(url_for('main.admin'))
 
 @auth.route('/logout', methods=['GET'])
-@login_required
 def logout():
   logout_user()
   return redirect(url_for('main.admin'))
